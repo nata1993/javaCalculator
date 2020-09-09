@@ -93,6 +93,30 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.button_percent:
                     remainder = true;
                     break;
+                case R.id.button_PlsMns:
+                    if (result.length() == 0)
+                        return;
+                    try {
+                        double resValue = Double.parseDouble(result.getText().toString());
+                        if( resValue > 0)
+                            result.setText(String.valueOf(resValue * -1));
+                        else result.setText(String.valueOf(Math.abs(resValue)));
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        e.printStackTrace();
+                    }
+                    break;
+                case R.id.button_sqrt:
+                    if (Double.isNaN(Math.sqrt(value1)))
+                    {
+                        result.setText(getResources().getString(R.string.error));
+                    }
+                    else
+                    {
+                        result.setText(String.valueOf(Math.sqrt(value1)));
+                    }
+                    break;
             }
         }
         catch(NumberFormatException e)

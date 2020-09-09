@@ -16,4 +16,5 @@
     <string name="percent">%</string>
     <string name="C">C</string>
     <string name="Equal">=</string>
+    <string name="error">Error: Can not take square root from negative value</string>
 </resources>
